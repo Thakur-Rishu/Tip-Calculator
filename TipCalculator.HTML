@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="TipCalc.css">
+</head>
+<body>
+
+    <div class="mainframe">
+        <p class="heading">TIP CALCULATOR</p>
+
+        <div class="innerframe">
+            <p>Bill Amount</p>
+            <input type="text" id="amount" placeholder="Enter Amount">&#x20B9
+        </div>
+
+        <div class="innerframe">
+            <p>How was the service</p>
+            <input type="text" id="tip" placeholder="Enter total tip">
+            </select>
+        </div>
+
+        <div class="innerframe">
+            <p>Number of People</p>
+            <input type="text" id="people" placeholder="Enter number of people">
+        </div>
+
+        <button id="button" onclick="CalculateTip()">Calculate</button>
+
+        <div class="innerframe">
+            <p>Tip Amount: </p>
+            <div class="total" id="total">0 <b>&#x20B9</b></div> 
+        </div>
+
+
+    </div>
+
+    <script> 
+
+        function CalculateTip(){
+
+            console.log("Button clicked!");
+            let amount = document.getElementById("amount").value;
+            let people = document.getElementById("people").value;
+            let tip = document.getElementById("tip").value;
+
+            let total = (amount * (tip/100)) / people;
+            total = total.toFixed(2)
+
+            document.getElementById("total").innerHTML = total 
+ 
+        }
+        
+    </script>
+    
+</body>
+</html>
